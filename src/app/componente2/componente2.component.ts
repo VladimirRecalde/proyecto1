@@ -1,5 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 
+
+import { DatosReg } from './interface1.model';
+
+import { DatosPersonas } from './data1.model';
+
 @Component({
   selector: 'app-componente2',
   templateUrl: './componente2.component.html',
@@ -7,7 +12,15 @@ import { Component, OnInit } from '@angular/core';
 })
 export class Componente2Component implements OnInit {
 
-  constructor() { }
+  constructor() {
+ 
+ // Datos 
+
+  localDatosPersonas : DatosPersonas;
+  //datos1 : TypeReg;
+  //public datos = new DatosReg(datos1);
+       
+  }
 
   ngOnInit() {
   }

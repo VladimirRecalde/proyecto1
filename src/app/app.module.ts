@@ -14,6 +14,7 @@ import { Componente3Component } from './componente3/componente3.component';
 import { Componente4Component } from './componente4/componente4.component';
 import { OpcionesComponent } from './opciones/opciones.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { ComponenteHijoComponent } from './componente-hijo/componente-hijo.component';
 
 const appRoutes: Routes = [
   { path: '1p', component: Componente1Component },
@@ -29,14 +30,25 @@ const appRoutes: Routes = [
     Componente2Component,
     Componente3Component,
     Componente4Component,
-    OpcionesComponent
+    OpcionesComponent,
+    ComponenteHijoComponent
+   
   ],
   imports: [
+     
     BrowserModule,
-    BrowserAnimationsModule
+    MatCardModule,
+    MatButtonModule,
+    BrowserAnimationsModule,
+    RouterModule.forRoot(appRoutes) ,
+    LayoutModule,
+    MatToolbarModule,
+    MatSidenavModule,
+    MatIconModule,
+    MatListModule
+
   ],
   providers: [],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
-
