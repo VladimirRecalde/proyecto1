@@ -7,6 +7,15 @@
 </div>
 
 
+<div>
+    <p *ngFor="let c of collection; let i = index; let o = odd; let e = even; let f = first; let l = last;">
+        {{ c.data }}, i: {{ i }}, f: {{f}}, l: {{l}}, o: {{o}}, e {{e}}
+        <span *ngIf="f">primero</span>
+    </p>
+    <p *ngFor="let x of Objects.keys(datos)"></p>
+</div>
+
+
 <h1>Clase Interacción componentes</h1>
 <app-componente-hijo [title]="'Title from father'"
                      (onClick)="childClicked($event)" ></app-componente-hijo>
@@ -25,10 +34,7 @@
 
 {{ obj | json }}
 
-
-
 <h1>{{ dontUseIt }}</h1>
-
 <p [style.background]="yellow">yellow</p>
 <p [style.font-size.em]="onComponentNumber">yellow</p>
 <button [attr.type]="'button'" [attr.aria-label]="'help'">texto</button>
@@ -38,17 +44,14 @@
 <div [ngClass]="{special: false, no: true}">ngClass</div>
 <div [ngClass]="changeClass()">ngClass</div>
 
-
 <button [disabled]="disable" (click)="onClick('hola component')">mi boton</button>
 <p [innerHtml]="'hola mundo!' + texto"></p>
 
-<h1> "label"+ {{ label }} </h1>
-
+<h1> {{ label }} </h1>
 <h2 [innerHtml]="label">  </h2>
 <h3 innerHtml="{{ label }}">  </h3>
 
 <input [value]="hola" (keyup)="onChange($event)" />
-
+<input [(ngModel)]="hola" />
 
 <h1>{{ hola }}</h1>
-

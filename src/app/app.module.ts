@@ -1,3 +1,26 @@
+///* Ejemplo de Router 
+import { NgModule } from '@angular/core';
+import { CommonModule } from '@angular/common';
+
+import { InicioRoutingModule } from './modules/inicio/inicio-routing.module';
+
+// componente 1 para el ejemplo
+import { Componente1Component } from './componente1/componente1.component';
+
+@NgModule({
+   declarations: [
+    Componente1Component,
+     ],
+    imports: [
+        CommonModule,
+        InicioRoutingModule
+    ]
+})
+
+export class AppModule { }
+//*/
+
+/*
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 
@@ -15,6 +38,12 @@ import { Componente4Component } from './componente4/componente4.component';
 import { OpcionesComponent } from './opciones/opciones.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ComponenteHijoComponent } from './componente-hijo/componente-hijo.component';
+
+// servicio a usar en el componente2
+import { proceso } from './componente2/proceso1.service';
+
+// uso del router 
+import { AppRoutingModule } from './app-routing.module';
 
 const appRoutes: Routes = [
   { path: '1p', component: Componente1Component },
@@ -45,10 +74,14 @@ const appRoutes: Routes = [
     MatToolbarModule,
     MatSidenavModule,
     MatIconModule,
-    MatListModule
+    MatListModule,
+    // uso del router
+    AppRoutingModule
 
   ],
-  providers: [],
+  
+  providers: [proceso],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
+//*/

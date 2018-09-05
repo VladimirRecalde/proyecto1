@@ -1,11 +1,23 @@
+
+
+
+<button mat-button (click)="setIdPersona(0)" >Persona 0</button>
+<button mat-button (click)="setIdPersona(1)" >Persona 1</button>
+<button mat-button (click)="setIdPersona(2)" >Persona 2</button>
+  
 <mat-card class="example-card">
   <mat-card-header>
-    <div mat-card-avatar class="example-header-image"></div>
-    <mat-card-title>Imagen xxx</mat-card-title>
+    <div mat-card-avatar class="example-header-image" style.background-image="url({{ datosx[nuIdPersona].urlImagen}})"></div>
+    <mat-card-title>Imagen {{ datosx[nuIdPersona].nombre}}</mat-card-title>
     <mat-card-subtitle>Ejemplo para likes</mat-card-subtitle>
   </mat-card-header>
+ 
+<!-- 
+<img mat-card-image src="https://static.iris.net.co/semana/upload/images/2018/8/10/579203_1.jpg" alt="Photo of a xxx">
+-->
+
+    <img mat-card-image src="{{ datosx[nuIdPersona].urlImagen}}" alt="Photo of a xxx">
   
-  <img mat-card-image src="https://static.iris.net.co/semana/upload/images/2018/8/10/579203_1.jpg" alt="Photo of a Shiba Inu">
   <mat-card-content>
     <p>
       Uso de Like y Unlike.
@@ -14,10 +26,23 @@
   <mat-card-actions>
      
   
-    <button mat-button (click)="proceso.pLike()" >LIKE</button>
-    <button mat-button (click)="proceso.pDisLike()" >DISLIKE</button>
-  
+    <button mat-button (click)="pLikex()" >LIKE</button>
+    <button mat-button (click)="pDisLikex()" >DISLIKE</button>
+    
+      <p><label>Contador like</label>  {{contadorLikex}}</p> 
+      <p><label>Contador Dislike</label>  {{contadorDLikex}}</p>
+      <p><label>Contador Total</label>   {{contadorTotalx}}</p>
+
+<!--        
+<div>
+  <p>1 {{ datosx[0].nombre}}</p>
+  <p>2 {{ datosx[1].nombre}}</p>
+  <p>3 {{ datosx[2].nombre}}</p>
+</div>
+-->
+
   </mat-card-actions>
-  
 </mat-card>
+
+
 

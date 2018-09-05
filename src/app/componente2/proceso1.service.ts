@@ -1,3 +1,15 @@
+
+// Injectable  --> para poder usar el codigo tal 
+// como si estuviera en otra clase 
+// se debe adicionar en app.modules.ts la clase 
+//             --> providers: [proceso],
+// se puede registrar en el modulo o en componente
+
+import { Injectable } from '@angular/core';
+
+import { Subject, Observable } from 'rxjs';
+
+
 export interface ContadoresType
 {
   contadorLike:number;
@@ -5,11 +17,26 @@ export interface ContadoresType
   contadorTotal:number;
 }
 
+// Injectable  --> en la clase a reusar 
+// (se usara en component2.component.ts)
+@Injectable()
 export class proceso 
 {
-  constructor() { }
-  public RecContadores : ContadoresType;
 
+  private observer = new Subject();
+  
+  constructor() { 
+  }
+
+  public RecContadores : ContadoresType =
+  {
+    contadorLike:0,
+    contadorDisLike:0,
+    contadorTotal:0
+  }
+  getDatos(){return this.RecContadores; }
+  setDatos(value) {this.RecContadores = value;}
+  
   pLike ()
   {
     this.RecContadores.contadorLike = this.RecContadores.contadorLike+1;

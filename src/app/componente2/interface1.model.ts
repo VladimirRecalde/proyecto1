@@ -1,5 +1,6 @@
 export interface TypeReg
 {
+  identificador:number;
   nombre:string;
   urlImagen:string;
   urlIcono:string;
